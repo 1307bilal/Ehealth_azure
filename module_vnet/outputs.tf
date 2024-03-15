@@ -22,3 +22,8 @@ output "vnet_subnets" {
   description = "The ids of subnets created inside the new vNet"
   value = azurerm_subnet.subnet.*.id
 }
+
+output "public_ip_id" {
+  description = "Public IP in Azure"
+  value = azurerm_public_ip.public_ip.id
+}

@@ -1,3 +1,13 @@
+variable "resource_group_name" {
+  description = "Name of the resource group to be imported."
+  type = string
+}
+
+variable "resource_group_location" {
+  description = "Name of the resource group to be imported."
+  type = string
+}
+
 variable "vnet_name" {
   type = string
   description = "Name of the Virtual Network"
@@ -19,4 +29,9 @@ variable "subnet_names" {
   description = "A list of public subnets inside the vNet"
   type = list(string)
   default = [ "subnet-webapp", "subnet-storage" ]
+}
+
+variable "public_ip_name" {
+  description = "Public IP name in Azure"
+  type = string
 }
