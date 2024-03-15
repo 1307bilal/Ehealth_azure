@@ -16,7 +16,7 @@ resource "azurerm_linux_web_app" "app" {
 
   app_settings = {}
 
-  connection_string {
-    
-  }
+  # connection_string {
+  #   name = ""
+  # }
 }
