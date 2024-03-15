@@ -10,7 +10,7 @@ resource "azurerm_linux_web_app" "app" {
 
   site_config {
     application_stack {
-      java_server_version = "17-java17"
+      java_server_version = var.java_server_version
     }
   }
 

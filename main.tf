@@ -13,6 +13,7 @@ module "vnet" {
   depends_on = [azurerm_resource_group.rg]
 }
 
+
 module "webapp" {
-  source = "github.com/1307bilal/Ehealth_azure"
+  source = "github.com/1307bilal/Ehealth_azure/module_webapp"
 }
