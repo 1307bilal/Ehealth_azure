@@ -3,7 +3,10 @@
 *.tfstate.*
 crash.log
 crash.*.log
+<<<<<<< HEAD
 #*.tfvars
+=======
+>>>>>>> 841c9cf0544f40e3c15df746331d11c7467aed80
 *.tfvars.json
 override.tf
 override.tf.json
