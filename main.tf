@@ -27,4 +27,5 @@ module "webapp" {
   location            = var.location
   webapp_name         = var.webapp_name
   java_server_version = var.java_server_version
+  service_plan_name = var.service_plan_name
 }

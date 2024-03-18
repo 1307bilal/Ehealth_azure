@@ -2,8 +2,8 @@ data "azurerm_resource_group" "webapp" {
   name = var.resource_group_name
 }
 
-resource "azurerm_service_plan" "wabapp-srevice-plan" {
-  name                = "wabapp_svc_plan"
+resource "azurerm_service_plan" "webapp-srevice-plan" {
+  name                = "webapp-svc-plan"
   resource_group_name = var.resource_group_name
   location            = var.location
   os_type             = "Linux"
@@ -14,7 +14,7 @@ resource "azurerm_linux_web_app" "app" {
   name                = var.webapp_name
   resource_group_name = var.resource_group_name
   location            = var.location
-  service_plan_id     = azurerm_service_plan.wabapp-srevice-plan.id
+  service_plan_id     = azurerm_service_plan.webapp_svc_plan.id
 
   site_config {
     application_stack {

@@ -17,3 +17,8 @@ variable "location" {
   type        = string
   description = "The location "
 }
+
+variable "service_plan_name" {
+  type = string
+  description = "The name of the service plan"
+}
