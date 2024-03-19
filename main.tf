@@ -22,10 +22,15 @@ module "storage" {
 }
 
 module "webapp" {
-  source              = "./module_webapp" #"github.com/1307bilal/Ehealth_azure/module_webapp"
-  resource_group_name = var.resource_group_name
-  location            = var.location
+  source              = "./module_webapp"                  #"github.com/1307bilal/Ehealth_azure/module_webapp"
+  resource_group_name = azurerm_resource_group.rg.name     #var.resource_group_name
+  location            = azurerm_resource_group.rg.location #var.location
   webapp_name         = var.webapp_name
   java_server_version = var.java_server_version
-  service_plan_name = var.service_plan_name
+  service_plan_name   = var.service_plan_name
+
+  mysqlserver_name    = var.mysqlserver_name
+  mysqladmin_login    = var.mysqladmin_login
+  mysqladmin_password = var.mysqladmin_password
+  mysql_db_name       = var.mysql_db_name
 }
