@@ -1,9 +1,3 @@
- 
- /*  data "azurerm_resource_group" "webapp-gr" {
-  name = var.resource_group_name
-} 
- */
-
 resource "azurerm_service_plan" "webapp-srevice-plan" {
   name                = "webapp-svc-plan"
   resource_group_name = var.resource_group_name
@@ -24,6 +18,7 @@ resource "azurerm_linux_web_app" "app" {
       java_server_version = var.java_server_version
       java_server = "TOMCAT"
       java_version = "17"
+      
     }
   }
 
