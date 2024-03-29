@@ -5,13 +5,12 @@ variable "resource_group_location" {
   description = "RG location in Azure for the entire project"
 }
 
-#--------------------------------------------------------------------------------
-
 variable "resource_group_name" {
   type = string
   description = "Control RG name in Azure"
-  default = "control-rg"
 }
+
+#--------------------------------------------------------------------------------
 
 variable "virtual_network_name" {
   type = string
