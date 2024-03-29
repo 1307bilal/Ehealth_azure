@@ -34,3 +34,8 @@ module "webapp" {
   mysqladmin_password = var.mysqladmin_password
   mysql_db_name       = var.mysql_db_name
 }
+
+module "controlMachine" {
+  source = "./module_controlMachine"
+  resource_group_location = azurerm_resource_group.rg.location
+}
