@@ -1,39 +1,50 @@
-variable "resource_group_name" {
-  description = "Name of the resource group to be imported."
-  type = string
-  default = "CONTROL_rg"
-}
+#GLOBAL
 
-#Input from main
 variable "resource_group_location" {
-  description = "Name of the resource group to be imported."
   type = string
+  description = "RG location in Azure for the entire project"
 }
 
-variable "vnet_name" {
+#--------------------------------------------------------------------------------
+
+variable "resource_group_name" {
   type = string
-  description = "Name of the Virtual Network"
+  description = "Control RG name in Azure"
+  default = "control-rg"
 }
 
-variable "address_space" {
-  type = list(string)
-  description = "The address space that is used by the virtual network."
-  default = [ "10.0.0.0/16" ]
-}
-
-variable "subnet_prefixes" {
-  description = "The address prefix to use for the subnet"
-  type = list(string)
-  default = [ "10.0.1.0/24", "10.0.2.0/24" ]
+variable "virtual_network_name" {
+  type = string
+  description = "Control VNET name in Azure"
+  default = "control-vnet"
 }
 
 variable "subnet_name" {
-  description = "A list of public subnets inside the vNet"
   type = string
-  default = "CONTROL_subnet"
+  description = "Control Subset name in Azure"
+  default = "control-subnet"
 }
 
 variable "public_ip_name" {
-  description = "Public IP name in Azure"
   type = string
+  description = "Control Public IP name in Azure"
+  default = "control-ip"
+}
+
+variable "network_security_group_name" {
+  type = string
+  description = "Control NSG name in Azure"
+  default = "control-nsg"
+}
+
+variable "network_interface_name" {
+  type = string
+  description = "Control NIC name in Azure"
+  default = "control-nic"
+}
+
+variable "control_machine_name" {
+  type = string
+  description = "Control VM name in Azure"
+  default = "control-vm"
 }
