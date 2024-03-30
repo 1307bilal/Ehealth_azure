@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 output "resource_group_name" {
   description = "Name of ehealth resource group to be imported."
   value = azurerm_resource_group.ehealth_rg.name
@@ -26,4 +27,16 @@ output "network_security_group_data" {
 output "network_security_group_nlb" {
   description = "Name of the security group rules for data layer"
   value = azurerm__network_security_group.ehealth_security_group_in_nlb_web.name
+=======
+output "webapp_url" {
+  value = module.webapp.webapp_url
+}
+
+output "webapp_ips" {
+  value = module.webapp.webapp_ips
+}
+
+output "mysql_db_name" {
+  value = module.webapp.mysql_db_name
+>>>>>>> main
 }
