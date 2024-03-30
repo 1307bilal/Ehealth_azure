@@ -3,6 +3,10 @@ resource "azurerm_resource_group" "ehealth_rg" {
   location = "West Europe"
 }
 
+module "net" {
+  source = "./module_vnet"
+}
+
 
 /** resource "azurerm__network_security_group" "ehealth_security_group_in_nlb_web" {
   name                = var.network_security_group_in_nlb_web
@@ -87,9 +91,7 @@ resource "azurerm__network_security_group" "ehealth_security_group_web" {
     source_address_prefix      = module.module_vnet.public_ip_id
     destination_address_prefix = "10.0.1.0/24"
   }
-    tags = {
-    environment = "Production"
-  }
+
 }
 
   resource "azurerm__network_security_group" "ehealth_security_group_logic" {
