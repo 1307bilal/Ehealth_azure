@@ -62,8 +62,9 @@ module "net" {
   }
 
 }
-***/
-resource "azurerm__network_security_group" "ehealth_security_group_web" {
+**/
+
+resource "azurerm_network_security_group" "ehealth_security_group_web" {
   name                = var.network_security_group_web
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
@@ -94,7 +95,7 @@ resource "azurerm__network_security_group" "ehealth_security_group_web" {
 
 }
 
-  resource "azurerm__network_security_group" "ehealth_security_group_logic" {
+  resource "azurerm_network_security_group" "ehealth_security_group_logic" {
   name                = var.network_security_group_logic
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
@@ -149,7 +150,7 @@ resource "azurerm__network_security_group" "ehealth_security_group_web" {
     source_port_range          = "*"
     destination_port_range     = "3306"
     source_address_prefix      = "10.0.2.0/24"
-    destination_address_prefix = "10.0.3.0/24"
+    destin  ation_address_prefix = "10.0.3.0/24"
   }
   
     tags = {
@@ -161,23 +162,21 @@ resource "azurerm__network_security_group" "ehealth_security_group_web" {
 
 
 resource "azurerm_subnet_network_security_group_association" "web" {
-  subnet_id                 = module.vnet_module.subnet_prefixes[0]
+  subnet_id                 = module.module_vnet.subnet_prefixes[0]
   network_security_group_id = azurerm_network_security_group.ehealth_security_group_web
 }
 
-
 resource "azurerm_subnet_network_security_group_association" "logic" {
-  subnet_id                 = module.vnet_module.subnet_prefixes[0]
+  subnet_id                 = module.module_vnet.subnet_prefixes[1]
   network_security_group_id = azurerm_network_security_group.ehealth_security_group_logic
 }
 
-
 resource "azurerm_subnet_network_security_group_association" "data" {
-  subnet_id                 = module.module_vnet.subnet_prefixes[1 ]
+  subnet_id                 = module.module_vnet.subnet_prefixes[2]
   network_security_group_id = azurerm_network_security_group.ehealth_security_group_data
 }
 
-
+/**
 resource "azurerm_lb" "ehealthLB" {
   name                = "EhealthtLoadBalancer"
   location            = azurerm_resource_group.example.location
@@ -187,4 +186,4 @@ resource "azurerm_lb" "ehealthLB" {
     name                 = "PublicIPAddress"
     public_ip_address_id = module.module_vnet.public_ip_id
   }
-}
+}**/

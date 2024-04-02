@@ -8,6 +8,40 @@ variable "location" {
   description = "The location "
 }
 
+#Security groups variables
+
+variable "network_security_group_web" {
+  description = "The security group rules for web layer"
+  type = string
+}
+
+variable "network_security_group_logic" {
+  description = "The security grouo rules for logic layer"
+  type = string
+}
+
+variable "network_security_group_data" {
+  description = "The security group rules for data layer"
+  type = string
+}
+
+
+variable "NSG_group_association_Web"{
+  description = "The group association for the web layer"
+  type = string
+
+}
+variable "NSG_group_association_Logic"{
+  description = "The group association for the logic layer"
+  type = string
+}
+
+variable "NSG_group_association_Data"{
+  description = "The group association for the data layer"
+  type = string
+}
+
+
 # Web application variables section
 variable "webapp_name" {
   type        = string
