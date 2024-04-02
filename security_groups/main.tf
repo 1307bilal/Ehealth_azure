@@ -92,6 +92,7 @@ resource "azurerm_network_security_group" "ehealth_security_group_web" {
     source_address_prefix      = module.module_vnet.public_ip_id
     destination_address_prefix = "10.0.1.0/24"
   }
+}
 
 resource "azurerm__network_security_group" "ehealth_security_group_logic" {
   name                = var.network_security_group_logic
@@ -173,7 +174,7 @@ resource "azurerm_subnet_network_security_group_association" "data" {
   subnet_id                 = module.module_vnet.subnet_prefixes[2]
   network_security_group_id = azurerm_network_security_group.ehealth_security_group_data
 }
-}
+
 
 /**
 resource "azurerm_lb" "ehealthLB" {
