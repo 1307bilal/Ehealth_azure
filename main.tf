@@ -22,9 +22,9 @@ module "security_groups"{
   network_security_group_web    = var.network_security_group_web
   network_security_group_logic  = var.network_security_group_logic
   network_security_group_data   = var.network_security_group_data
-  NSG group association Web     = var.NSG_group_association_Web
-  NSG group association Logic   = var.NSG_group_association_Logic
-  NSG group association Data    = var.NSG_group_association_Data
+  NSG_group_association_Web     = var.NSG_group_association_Web
+  NSG_group_association_Logic   = var.NSG_group_association_Logic
+  NSG_group_association_Data    = var.NSG_group_association_Data
   depends_on                    = [azurerm_resource_group]
 }
 
