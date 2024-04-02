@@ -148,7 +148,7 @@ resource "azurerm__network_security_group" "ehealth_security_group_data" {
     source_port_range          = "*"
     destination_port_range     = "3306"
     source_address_prefix      = "10.0.2.0/24"
-    destin  ation_address_prefix = "10.0.3.0/24"
+    destingiation_address_prefix = "10.0.3.0/24"
   }
 
   tags = {
