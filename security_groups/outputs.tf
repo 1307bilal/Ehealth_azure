@@ -29,17 +29,17 @@ output "network_security_group_data" {
 
 output "NSG_group_association_web" {
   description = "Name of the association for web layer"
-  value = azurerm_network_security_group.ehealth_security_group_web.name
+  value = azurerm_subnet_security_group_association.web
 }
 
 output "NSG_group_association_logic" {
   description = "Name of the association for logic layer"
-  value = azurerm_network_security_group.ehealth_security_group_logic.name
+  value = azurerm_subnet_security_group_association.logic
 }
 
 output "NSG_group_association_data" {
   description = "Name of the association for data layer"
-  value = azurerm_network_security_group.ehealth_security_group_data.name
+  value = azurerm_subnet_security_group_association.data
 }
 
 /**output "network_security_group_nlb" {
