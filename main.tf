@@ -49,7 +49,7 @@ module "webapp" {
 }
 
 module "controlMachine" {
-  source = "./module_controlMachine"
+  source                  = "./module_controlMachine"
   resource_group_location = azurerm_resource_group.rg.location
-  resource_group_name = azurerm_resource_group.rg.name
+  resource_group_name     = azurerm_resource_group.rg.name
 }

@@ -93,9 +93,7 @@ resource "azurerm_network_security_group" "ehealth_security_group_web" {
     destination_address_prefix = "10.0.1.0/24"
   }
 
-}
-
-  resource "azurerm_network_security_group" "ehealth_security_group_logic" {
+resource "azurerm__network_security_group" "ehealth_security_group_logic" {
   name                = var.network_security_group_logic
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
@@ -110,7 +108,7 @@ resource "azurerm_network_security_group" "ehealth_security_group_web" {
     source_address_prefix      = "10.0.1.0/24"
     destination_address_prefix = "10.0.2.0/24"
   }
-    security_rule {
+  security_rule {
     name                       = "https"
     priority                   = 104
     direction                  = "Inbound"
@@ -121,7 +119,7 @@ resource "azurerm_network_security_group" "ehealth_security_group_web" {
     source_address_prefix      = "10.0.1.0/24"
     destination_address_prefix = "10.0.2.0/24"
   }
-      security_rule {
+  security_rule {
     name                       = "mysql"
     priority                   = 104
     direction                  = "outbound"
@@ -137,7 +135,7 @@ resource "azurerm_network_security_group" "ehealth_security_group_web" {
   }
 }
 
-  resource "azurerm__network_security_group" "ehealth_security_group_data" {
+resource "azurerm__network_security_group" "ehealth_security_group_data" {
   name                = var.network_security_group_data
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
@@ -152,8 +150,8 @@ resource "azurerm_network_security_group" "ehealth_security_group_web" {
     source_address_prefix      = "10.0.2.0/24"
     destin  ation_address_prefix = "10.0.3.0/24"
   }
-  
-    tags = {
+
+  tags = {
     environment = "Production"
   }
 }
