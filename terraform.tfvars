@@ -9,3 +9,6 @@ mysqlserver_name    = "ehealth-mysqlserver"
 mysqladmin_login    = "mysqladminun"
 mysqladmin_password = "H@Sh1CoR3!"
 mysql_db_name       = "patient"
+
+# webapp
+vms = ["springboot", "dotnet", "mysql"]

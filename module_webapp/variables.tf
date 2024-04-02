@@ -19,30 +19,30 @@ variable "location" {
 }
 
 variable "service_plan_name" {
-  type = string
+  type        = string
   description = "The name of the service plan"
 }
 
 # Mysql
 
 variable "mysqlserver_name" {
-  type = string
+  type        = string
   description = "The Mysql server name"
 }
 
 variable "mysqladmin_login" {
-  type = string
+  type        = string
   description = "The admin login of tMysqm server"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "mysqladmin_password" {
-  type = string
+  type        = string
   description = "The mysql server administrator password"
-  sensitive = true
+  sensitive   = true
 }
 
 variable "mysql_db_name" {
-  type = string
+  type        = string
   description = "The mysql database name"
 }
