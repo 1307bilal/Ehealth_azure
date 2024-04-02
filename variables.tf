@@ -26,17 +26,17 @@ variable "network_security_group_data" {
 }
 
 
-variable "NSG_group_association_Web"{
+variable "NSG_group_association_web"{
   description = "The group association for the web layer"
   type = string
 
 }
-variable "NSG_group_association_Logic"{
+variable "NSG_group_association_logic"{
   description = "The group association for the logic layer"
   type = string
 }
 
-variable "NSG_group_association_Data"{
+variable "NSG_group_association_data"{
   description = "The group association for the data layer"
   type = string
 }
