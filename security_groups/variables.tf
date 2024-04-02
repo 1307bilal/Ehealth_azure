@@ -23,7 +23,12 @@ variable "network_security_group_data" {
   type        = string
 }
 
-variable "network_security_group_in_nlb_web" {
-  description = "The security group rules for data layer"
-  type        = string
+
+/**variable "network_security_group_in_nlb_web" {
+  description = "The security group rules for nlb"
+  type = string
+}:
+**/
+
 }
+

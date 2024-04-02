@@ -15,6 +15,19 @@ module "vnet" {
   depends_on              = [azurerm_resource_group.rg]
 }
 
+module "security_groups"{
+  source                        ="./security_groups"
+  resource_group_name           = azurerm_resource_group.rg.name
+  resource_group_location       = azurerm_resource_group.rg.location
+  network_security_group_web    = var.network_security_group_web
+  network_security_group_logic  = var.network_security_group_logic
+  network_security_group_data   = var.network_security_group_data
+  NSG group association Web     = var.NSG_group_association_Web
+  NSG group association Logic   = var.NSG_group_association_Logic
+  NSG group association Data    = var.NSG_group_association_Data
+  depends_on                    = [azurerm_resource_group]
+}
+
 module "storage" {
   source              = "./modules_storage"
   resource_group_name = azurerm_resource_group.rg.name
