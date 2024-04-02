@@ -7,6 +7,6 @@ output "control_vm_ip" {
 }
 
 output "control_machine_key_ssh" {
-  value = tls_private_key.control_machine_key_ssh.private_key_pem
+  value     = tls_private_key.control_machine_key_ssh.private_key_pem
   sensitive = true
 }

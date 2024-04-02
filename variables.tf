@@ -47,3 +47,8 @@ variable "mysql_db_name" {
   type        = string
   description = "The mysql database name"
 }
+
+variable "vms" {
+  type        = list(string)
+  description = "The list of vms to be created"
+}
